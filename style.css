@@ -5,10 +5,25 @@
 
 html {
 	min-width: 60em;
+	height: 100%;
 	min-height: 100%;
 }
 
 body {
+	min-height: 100%;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+}
+
+	article {
+		flex: 1;
+		-webkit-flex: 1;
+	}
+
+body {
+	position: relative; /* Anchor for GitHub link. */
 	background-color: black;
 	color: white;
 	font-family: Constantia, Georgia, serif;
@@ -37,7 +52,7 @@ body {
 		-ms-linear-gradient(top, hsla(0, 100%, 100%, 0.20) 0%, hsla(0, 100%, 100%, 0) 100%)
 	;
 	background-size:
-		95em 100%,
+		95em 1em, /* Arbitrary 1em height; will be repeated vertically below. */
 		95em 10em,
 		95em 0.0625em,
 		95em 16em
@@ -48,27 +63,35 @@ body {
 		center 33.5em,
 		center 33.5675em
 	;
-	background-repeat: no-repeat;
+	background-repeat:
+		repeat-y, /* Repeat black gradient vertically in order to fill height even when window overflows. */
+		no-repeat,
+		no-repeat,
+		no-repeat
+	;
 }
 
-h1 {
-	margin-top: 1em;
-	text-align: center;
-	font-size: 4em;
-	font-weight: normal;
-	line-height: 1.5em;
+header {
+	padding-top: 4em;
 }
 
-h2 {
-	text-align: center;
-	color: hsl(0, 0%, 75%);
-	font-size: 1.25em;
-	line-height: 1.5em;
-	font-weight: normal;
-	font-style: italic;
-}
+	header h1 {
+		text-align: center;
+		font-size: 4em;
+		font-weight: normal;
+		line-height: 1.5em;
+	}
 
-.preview {
+	header p {
+		text-align: center;
+		color: hsl(0, 0%, 75%);
+		font-size: 1.25em;
+		line-height: 1.5em;
+		font-weight: normal;
+		font-style: italic;
+	}
+
+article {
 	margin-top: 4em;
 	text-align: center;
 }
@@ -168,8 +191,8 @@ h2 {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 9.3125em;
-	height: 9.3125em;
+	width: 9.3125rem;
+	height: 9.3125rem;
 	margin: 0;
 	font-size: 1em;
 	background-image: url('images/github.png');
@@ -188,26 +211,33 @@ h2 {
 	border: 0;
 }
 
-.footer {
-	margin: 0.5em;
-	margin-top: 7.5em;
+footer {
+	margin-top: 5em;
 	text-align: center;
-	font-size: 0.75em;
-	color: hsl(0, 0%, 25%);
+	color: hsl(0, 0%, 50%);
+	font-family: Georgia, serif;
 }
+	
+	footer ul {
+		font-size: 1.5em;
+	}
+	
+	footer li {
+		display: inline;
+	}
+	
+	footer li + li {
+		margin-left: 1em;
+	}
 
-.footer + .footer {
-	margin-top: 0.5em;
-	margin-bottom: 1.5em;
-}
-
-.footer a {
-	color: hsl(220, 100%, 35%);
-	border-bottom: 0.0625rem solid hsl(220, 100%, 35%);
-	text-decoration: none;
-}
-
-.footer a:hover {
-	color: hsl(220, 100%, 60%);
-	border-bottom-color: hsl(220, 100%, 60%);
-}
+	footer a {
+		color: hsl(200, 100%, 50%);
+		text-decoration: underline;
+	}
+	
+	footer small {
+		display: block;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+		font-size: 1em;
+	}
