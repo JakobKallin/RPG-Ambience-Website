@@ -17,15 +17,15 @@
 						return path + '.mp3';
 					}
 				};
-				
+
 				window.requestAnimationFrame =
 					window.webkitRequestAnimationFrame ||
 					window.mozRequestAnimationFrame ||
 					window.msRequestAnimationFrame;
-				
+
 				if ( window.requestAnimationFrame ) {
 					document.querySelector('a[href="teaser.html"]').style.display = '';
-					
+
 					['dragon', '9-Trailer_Music'].forEach(function(filename) {
 						var path = 'example/' + supportedFormat(filename);
 						var node = document.createElement('audio');
@@ -34,7 +34,7 @@
 						node.volume = 0;
 						node.play();
 					});
-					
+
 					['ishtar_rooftop.jpg', 'sintel-wallpaper-dragon.jpg'].forEach(function(filename) {
 						var path = 'example/' + filename;
 						var node = document.createElement('img');
@@ -68,9 +68,10 @@
 		</article>
 		<footer>
 			<ul>
-				<li><a href="mailto:rpg.ambience@gmail.com">Contact</a></li><!--
+				<li><a href="mailto:jakob@tabletopsoftware.net">Email</a></li><!--
 				--><li><a href="http://blog.rpg-ambience.com/">Blog</a></li><!--
 				--><li><a href="https://groups.google.com/forum/#!forum/rpg-ambience">Mailing List</a></li><!--
+				--><li><a href="https://plus.google.com/u/0/b/103500646933311549673/communities/113100743661844880533">Google+</a></li><!--
 				--><li class="github"><a href="https://github.com/JakobKallin/RPG-Ambience">GitHub</a></li>
 			</ul>
 			<small>Artwork © copyright Blender Foundation | <a href="http://www.sintel.org">www.sintel.org</a></small>
